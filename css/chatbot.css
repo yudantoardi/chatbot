@@ -629,4 +629,7 @@ ul.message li .pic img{
     .chatbot-wrapper.popup-active .chatbot-ct{
         left: 0;
     }
+    .chatbot-popup{
+        left: 0;
+    }
 }

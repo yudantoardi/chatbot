@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+    $(".chatbot-toggle").click(function(){
+        $(this).toggleClass("active")
+        $(".chatbot-body").toggleClass("show");
+    });
+
     $(".pop-link").click(function(pl){
         pl.preventDefault();
         $(".chatbot-wrapper").addClass("popup-active");

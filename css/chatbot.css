@@ -583,3 +583,31 @@ ul.message li.sender span{
 #searcher li:hover{
     background: rgba(48, 71, 236, 0.12);
 }
+
+@media only screen and (max-width: 1024px){
+    .chatbot-wrapper{
+        bottom: 0;
+        right: 0;
+    }
+    .chatbot-body{
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .chatbot-body.show{
+        right: 0;
+        bottom: 0;
+    }
+    .chatbot-toggle{
+        z-index: 9;
+        bottom: 16px;
+        right: 16px;
+    }
+    .chatbot-ct{
+        padding-bottom: 76px;
+    }
+}

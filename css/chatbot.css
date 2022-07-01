@@ -511,6 +511,19 @@ ul.message li.receiver .dialog-box{
 ul.message li.sender span{
     text-align: right;
 }
+ul.message li .pic{
+    width: 200px;
+    overflow: hidden;
+    margin-bottom: 4px;
+    border: 3px solid #efefef;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+ul.message li .pic img{
+    width: 100%;
+    display: block;
+}
 
 #searcher .chatbot-popup-head{
     border-bottom: 1px solid #dedede;
@@ -588,6 +601,9 @@ ul.message li.sender span{
     .chatbot-wrapper{
         bottom: 0;
         right: 0;
+    }
+    .chatbot-wrapper.popup-active .chatbot-toggle{
+        display: none;
     }
     .chatbot-body{
         width: 100vw;

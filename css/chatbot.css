@@ -1,0 +1,526 @@
+*{
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6,
+p,ul,li{
+    width: 100%;
+    float: left;
+}
+a{
+    text-decoration: none;
+}
+input:focus{
+    outline: none;
+}
+.chatbot-wrapper{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 100%;
+    max-width: 376px;
+}
+.chatbot-toggle{
+    width: 60px;
+    height: 60px;
+    float: right;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    padding-top: 17px;
+    background: #0057ff;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.chatbot-body{
+    width: 100%;
+    height: 100vh;
+    height: 720px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    transition: all ease-out 0.3s;
+    -moz-transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+}
+.chatbot-body::before{
+    content: "";
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #0057ff;
+}
+.chatbot-body h2{
+    font-size: 24px;
+}
+.chatbot-body p{
+    font-size: 14px;
+    color: #555;
+}
+.chatbot-ct{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 16px;
+    transition: all ease-out 0.3s;
+    -moz-transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+}
+.section{
+    width: 100%;
+    float: left;
+    position: relative;
+    z-index: 2;
+}
+
+.chatbot-head{
+    padding: 20px;
+    color: #fff;
+    transition: all ease-out 0.3s;
+    -moz-transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+}
+.chatbot-head p{
+    color: #fff;
+    margin-top: 0;
+}
+.chatbot-card{
+    background: #fff;
+    padding: 24px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-top: 2px solid rgba(48, 71, 236, 0.5);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.chatbot-card h3{
+    margin: 0 0 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.img-group{
+    width: 45%;
+    float: left;
+    margin-bottom: 30px;
+}
+.chatbot-card .img-group .pic{
+    margin-right: 0;
+}
+.chatbot-card .pic{
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-left: -30px;
+    margin-right: 10px;
+    border: 3px solid #fff;
+    overflow: hidden;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.chatbot-card .pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.chatbot-card .pic:first-child{
+    margin-left: 0;
+}
+.chatbot-card .section.conv-info p{
+    margin: 11px 0;
+    width: 55%;
+}
+.chatbot-card a.section.conv-info{
+    border-bottom: 1px solid #efefef;
+    padding: 10px 0;
+    position: relative;
+}
+.chatbot-card a.section.conv-info:first-child{
+    padding-top: 0;
+}
+.chatbot-card a.section.conv-info:last-child{
+    border-bottom: none;
+}
+.chatbot-card a.section.conv-info i{
+    position: absolute;
+    right: 0;
+    top: calc(50% - 8px);
+    font-size: 20px;
+}
+.chatbot-card a.section.conv-info p{
+    margin: 0;
+}
+.chatbot-card a.section.conv-info p span{
+    font-size: 11px;
+    
+}
+
+.chatbot-btn{
+    padding: 8px 24px;
+    color: #fff;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    display: inline-block;
+    transition: all ease-out 0.3s;
+    -moz-transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+}
+.chatbot-btn i{
+    margin-right: 10px;
+}
+.chatbot-btn.btn-primary{
+    background: #0057ff;
+}
+.chatbot-btn.btn-primary:hover{
+    background: rgba(95,112,240,1);
+}
+.chatbot-btn.btn-secondary{
+    border: 2px solid #0057ff;
+    background: #fff;
+    color: #0057ff;
+}
+.chatbot-btn.btn-secondary:hover{
+    background: rgba(95,112,240,0.12);
+}
+
+.toggle-search{
+    padding: 11px 24px 9px;
+    border: 1px solid #dedede;
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border-radius: 24px;
+    -moz-border-radius: 24px;
+    -webkit-border-radius: 24px;
+    color: #777;
+    transition: all ease-out 0.3s;
+    -moz-transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+}
+.toggle-search i{
+    margin-right: 10px;
+}
+.toggle-search:hover{
+    border-color: #0057ff;
+}
+.toggle-search:hover i{
+    color: #0057ff;
+}
+ul{
+    padding-left: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+.chatbot-card li{
+    position: relative;
+    width: 100%;
+    float: left;
+    padding: 10px 0;
+    font-size: 14px;
+}
+.chatbot-card li i{
+    position: absolute;
+    right: 0;
+    top: 13px;
+    color: #777;
+}
+.chatbot-card li a{
+    color: #333;
+    transition: all ease-out 0.3s;
+    -moz-transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+}
+.chatbot-card li a:hover{
+    color: #0057ff;
+}
+.chatbot-card h5{
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.chatbot-popup{
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all ease-out 0.3s;
+    -moz-transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+}
+.chatbot-popup.show{
+    left: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+.chatbot-popup-head{
+    width: 100%;
+    height: 60px;
+    float: left;
+    background: #0057ff;
+}
+.chatbot-popup-head .btn-back{
+    width: 60px;
+    height: 60px;
+    float: left;
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 18px;
+}
+.chatbot-popup-head .btn-back:hover{
+    cursor: pointer;
+}
+#messager .chatbot-popup-head .btn-back{
+    color: #fff;
+}
+.chatbot-popup-head .avatar{
+    width: calc(100% - 60px);
+    float: left;
+    padding: 10px 10px 10px 0;
+}
+.avatar .pic{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    float: left;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.avatar .pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.avatar span{
+    display: inline-block;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+}
+.messager-body{
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    height: calc(100% - 60px);
+}
+.messager-body form.input-message{
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #dedede;
+}
+.messager-body form.input-message input[type="text"]{
+    width: 100%;
+    height: 60px;
+    float: left;
+    border: none;
+    padding: 16px;
+}
+.messager-body form.input-message .inp-file{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 66px;
+    top: 10px;
+    padding-top: 9px;
+    text-align: center;
+    color: #777;
+    transition: all ease-out 0.3s;
+    -moz-transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+}
+.messager-body form.input-message .inp-file i{
+    font-size: 18px;
+}
+.messager-body form.input-message .inp-file input{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.messager-body form.input-message .inp-file:hover{
+    color: #0057ff;
+}
+.messager-body form.input-message .inp-file input:hover{
+    cursor: pointer;
+}
+.messager-body form.input-message button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #dedede;
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: #fff;
+    background: #0057ff;
+}
+.chatbot-wrapper.popup-active .chatbot-ct{
+    left: -30px;
+    overflow-y: hidden;
+}
+
+.message-box{
+    width: 100%;
+    height: calc(100% - 60px);
+    float: left;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 16px;
+    position: relative;
+}
+ul.message{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 16px;
+    max-height: 100%;
+    overflow-y: auto;
+}
+ul.message li{
+    width: 100%;
+    float: left;
+    margin-bottom: 16px;
+}
+ul.message li .dialog-box{
+    max-width: 75%;
+    padding: 10px 20px;
+}
+ul.message li .dialog-box p{
+    margin: 0;
+}
+ul.message li span{
+    width: 100%;
+    float: left;
+    font-size: 12px;
+    color: #777;
+    padding-top: 3px;
+}
+ul.message li.sender .dialog-box{
+    float: right;
+    background: #0057ff;
+    border-radius: 20px 20px 3px 20px;
+    -moz-border-radius: 20px 20px 3px 20px;
+    -webkit-border-radius: 20px 20px 3px 20px;
+}
+ul.message li.sender .dialog-box p{
+    color: #fff;
+}
+ul.message li.receiver .dialog-box{
+    float: left;
+    background: #f4f4f4;
+    border-radius: 20px 20px 20px 3px;
+}
+ul.message li.sender span{
+    text-align: right;
+}
+
+#searcher .chatbot-popup-head{
+    border-bottom: 1px solid #dedede;
+    background: #fff;
+}
+.chatbot-search-form{
+    width: calc(100% - 60px);
+    float: left;
+    position: relative;
+}
+.chatbot-search-form input{
+    width: 100%;
+    height: 60px;
+    background: none;
+    border: none;
+    padding-right: 50px;
+}
+.chatbot-search-form button{
+    position: absolute;
+    right: 20px;
+    top: 19px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    color: #777;
+}
+
+#searcher .section{
+    padding: 0 16px;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+}
+#searcher .section h5{
+    margin-bottom: 0;
+}
+#searcher .section h3{
+    margin: 0 0 10px;
+    font-size: 14px;
+    position: relative;
+}
+#searcher .section h3 a{
+    color: #333;
+    transition: all ease-out 0.3s;
+    -moz-transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+}
+#searcher .section h3 a i{
+    position: absolute;
+    right: 0;
+}
+#searcher .section h3:hover a{
+    color: #0057ff;
+}
+#searcher .section p{
+    margin: 0;
+}
+#searcher ul{
+    margin-left: -16px;
+    width: calc(100% + 32px);
+}
+#searcher li{
+    padding: 20px 16px;
+    transition: all ease-out 0.3s;
+    -moz-transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+}
+#searcher li:last-child{
+    border-bottom: none;
+}
+#searcher li:hover{
+    background: rgba(48, 71, 236, 0.12);
+}

@@ -626,4 +626,7 @@ ul.message li .pic img{
     .chatbot-ct{
         padding-bottom: 76px;
     }
+    .chatbot-wrapper.popup-active .chatbot-ct{
+        left: 0;
+    }
 }

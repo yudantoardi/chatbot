@@ -334,7 +334,6 @@ li{
     -webkit-transition: all ease-out 0.3s;
 }
 .chatbot-popup.show{
-    left: 0;
     opacity: 1;
     pointer-events: auto;
 }
